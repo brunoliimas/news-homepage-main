@@ -1,0 +1,314 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 6rem;
+  /*========== Colors ==========*/
+  --soft-orange: hsl(35, 77%, 62%);
+  --soft-red: hsl(5, 85%, 63%);
+  --off-white: hsl(36, 100%, 99%);
+  --grayish-blue: hsl(233, 8%, 79%);
+  --dark-grayish-blue: hsl(236, 13%, 42%);
+  --very-dark-blue: hsl(240, 100%, 5%);
+  /*========== Font and typography ==========*/
+  --body-font: "Inter", sans-serif;
+  --biggest-font-size: 3.5rem;
+  --h2-font-size: 2.5rem;
+  --span-font-size: 2rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-bold: 700;
+  --font-black: 800;
+  /*========== Margins ==========*/
+  --m-0-5: .5rem;
+  --m-0-75: .75rem;
+  --m-1: 1rem;
+  --m-1-5: 1.5rem;
+  --m-2: 2rem;
+  --z-fixed-5: 5;
+  --z-fixed-10: 10;
+  --z-fixed-15: 15;
+}
+@media screen and (max-width: 375px) {
+  :root {
+    --biggest-font-size: 2.5rem;
+    --h2-font-size: 2.25rem;
+    --span-font-size: 2rem;
+    --h3-font-size: 1.15rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*=============== BASE ===============*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: 0.5s;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: var(--font-bold);
+  color: var(--title-color);
+  line-height: 1;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  color: var(--dark-grayish-blue);
+  font-size: var(--normal-font-size);
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+section {
+  padding: 0;
+}
+
+/*=============== LAYOUT ===============*/
+.container {
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 1110px) {
+  header,
+section {
+    padding: 0 1rem;
+  }
+}
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed-5);
+  background-color: #fff;
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.5;
+  z-index: var(--z-fixed-10);
+  transition: 0.5s;
+}
+.nav__toggle {
+  font-size: var(--span-font-size);
+  cursor: pointer;
+}
+.nav__menu {
+  position: relative;
+}
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    background-color: #fff;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    box-shadow: -2px 0 4px hsla(0deg, 0%, 0%, 0.188);
+    padding: 3rem;
+    transition: 0.4s;
+    z-index: var(--z-fixed-15);
+  }
+}
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--m-2);
+}
+.nav__link {
+  color: var(--very-dark-blue);
+}
+.nav__link:hover {
+  color: var(--soft-orange);
+}
+.nav__close {
+  font-size: var(--span-font-size);
+  position: absolute;
+  top: var(--m-1-5);
+  right: var(--m-1);
+  color: var(--very-dark-blue);
+  cursor: pointer;
+}
+
+.show-menu {
+  right: 0;
+}
+
+@media screen and (min-width: 426px) {
+  .nav__list {
+    flex-direction: row;
+  }
+  .nav__item {
+    margin: 0 1rem;
+  }
+  .nav__toggle, .nav__close {
+    display: none;
+  }
+}
+.home .principal img {
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: var(--m-1-5);
+}
+.home .principal h1 {
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-black);
+  margin-bottom: var(--m-1-5);
+}
+.home .principal__data a {
+  display: inline-block;
+  padding: 16px 32px;
+  text-transform: uppercase;
+  font-weight: var(--font-bold);
+  letter-spacing: 2px;
+  background-color: var(--soft-red);
+  color: #fff;
+  margin-top: var(--m-1-5);
+  transition: 0.4s;
+}
+.home .principal__data a:hover {
+  background-color: var(--very-dark-blue);
+}
+.home aside {
+  background-color: var(--very-dark-blue);
+  margin: 3.8rem 0;
+  padding: 1.9rem;
+}
+.home aside h2 {
+  color: var(--soft-orange);
+}
+.home aside .news {
+  padding: 2.5rem 0;
+}
+.home aside .news h3 {
+  color: #fff;
+  font-size: var(--h3-font-size);
+  margin-bottom: 1rem;
+}
+.home aside hr {
+  opacity: 0.5;
+}
+.home aside :nth-child(6) {
+  padding-bottom: 0;
+}
+
+.popular {
+  margin: 3.8rem 0;
+}
+.popular .post {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
+.popular .post img {
+  max-width: 100px;
+}
+.popular .post__data {
+  margin-left: 1.5rem;
+}
+.popular .post__data span {
+  font-size: var(--span-font-size);
+  font-weight: var(--font-bold);
+  color: var(--grayish-blue);
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+.popular .post__data h3 {
+  color: var(--very-dark-blue);
+  font-size: var(--h3-font-size);
+  margin-bottom: 1rem;
+}
+
+footer {
+  padding: 0 0 2rem;
+  text-align: center;
+}
+footer a {
+  color: var(--soft-red);
+}
+
+@media screen and (min-width: 769px) {
+  .home .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .home .container .principal {
+    grid-column: 1/3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
+  .home .container .principal img {
+    grid-column: 1/3;
+    margin: 0;
+  }
+  .home .container .principal h1 {
+    margin: 0;
+  }
+  .home .container .principal__data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .home .container aside {
+    margin: 0;
+  }
+  .popular .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}/*# sourceMappingURL=styles.css.map */

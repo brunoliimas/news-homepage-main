@@ -1,0 +1,49 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 6rem;
+
+    /*========== Colors ==========*/
+    --soft-orange: hsl(35, 77%, 62%);
+    --soft-red: hsl(5, 85%, 63%);
+    --off-white: hsl(36, 100%, 99%);
+    --grayish-blue: hsl(233, 8%, 79%);
+    --dark-grayish-blue: hsl(236, 13%, 42%);
+    --very-dark-blue: hsl(240, 100%, 5%);
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Inter', sans-serif;
+
+    --biggest-font-size: 3.5rem;
+    --h2-font-size: 2.5rem;
+    --span-font-size: 2rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+
+    // Responsive typography
+    @media screen and (max-width: 375px) {
+        --biggest-font-size: 2.5rem;
+        --h2-font-size: 2.25rem;
+        --span-font-size: 2rem;
+        --h3-font-size: 1.15rem;
+        --normal-font-size: 1rem;
+    }
+
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-bold: 700;
+    --font-black: 800;
+
+    /*========== Margins ==========*/
+    --m-0-5: .5rem;
+    --m-0-75: .75rem;
+    --m-1: 1rem;
+    --m-1-5: 1.5rem;
+    --m-2: 2rem;
+
+    --z-fixed-5: 5;
+    --z-fixed-10: 10;
+    --z-fixed-15: 15;
+}
