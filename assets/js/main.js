@@ -10,12 +10,14 @@ if (navToggle) {
     navToggle.addEventListener('click', () => {
         navMenu.classList.add('show-menu');
         navOverlay.style.display = 'block';
+        document.body.classList.add('stop-scroll')
     })
 }
 if (navClose) {
     navClose.addEventListener('click', () => {
         navMenu.classList.remove('show-menu');
         navOverlay.style.display = 'none';
+        document.body.classList.remove('stop-scroll')
     })
 }
 
@@ -24,5 +26,6 @@ if (navClose) {
 function linkAction() {
     navMenu.classList.remove('show-menu');
     navOverlay.style.display = 'none';
+    document.body.classList.remove('stop-scroll')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))

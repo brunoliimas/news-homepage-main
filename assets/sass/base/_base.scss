@@ -19,6 +19,9 @@ body {
     color: var(--text-color);
     transition: .5s; // For animation dark mode
 }
+.stop-scroll{
+    overflow: hidden;
+}
 
 h1,
 h2,
